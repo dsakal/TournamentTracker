@@ -1,0 +1,1563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.java.project.tournamenttracker.main.TournamentInputController">
+    <children>
+        <fx:include source="menuBar.fxml" />
+        <GridPane fx:id="gridPane" prefHeight="1200.0" prefWidth="623.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Edit tournaments" textFill="WHITE" GridPane.columnSpan="4" GridPane.halignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <TableView fx:id="tournamentsTableView" prefHeight="0.0" prefWidth="0.0" GridPane.rowIndex="2" GridPane.rowSpan="3">
+                    <columns>
+                        <TableColumn fx:id="tournamentNameTableColumn" prefWidth="275.0" text="Tournaments" />
+                    </columns>
+               <GridPane.margin>
+                  <Insets left="20.0" right="20.0" />
+               </GridPane.margin>
+                </TableView>
+            <TableView fx:id="teamsTableView" prefHeight="0.0" prefWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="3">
+               <columns>
+                  <TableColumn fx:id="teamNameTableColumn" prefWidth="315.0" text="Teams" />
+               </columns>
+            </TableView>
+            <TextField fx:id="search" maxWidth="220.0" minWidth="150.0" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="15.0" right="15.0" />
+               </GridPane.margin></TextField>
+            <Button mnemonicParsing="false" onAction="#onSearchClick" text="Search tournaments" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: black;" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <children>
+                  <GridPane prefHeight="13.0" prefWidth="669.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Name:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextArea fx:id="nameTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="28.0" prefWidth="300.0" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="70.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextArea>
+                     </children>
+                  </GridPane>
+               </children>
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+               </GridPane.margin>
+            </HBox>
+            <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: black;" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+               </GridPane.margin>
+               <children>
+                  <GridPane prefHeight="13.0" prefWidth="669.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Location:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextArea fx:id="locationTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="28.0" prefWidth="300.0" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="85.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextArea>
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+                <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: black;" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                    <children>
+                  <GridPane prefHeight="13.0" prefWidth="669.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                              <Label text="Venue:">
+                                  <font>
+                                      <Font size="16.0" />
+                                  </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                              </Label>
+                        <TextArea fx:id="venueTextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="28.0" prefWidth="300.0" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="70.0" right="10.0" />
+                           </GridPane.margin>
+                        </TextArea>
+                     </children>
+                  </GridPane>
+                    </children>
+                    <GridPane.margin>
+                        <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+                    </GridPane.margin>
+                </HBox>
+                <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: black;" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                    <children>
+                  <GridPane prefHeight="13.0" prefWidth="669.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                              <Label text="Start date:">
+                                  <font>
+                                      <Font size="16.0" />
+                                  </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                              </Label>
+                        <DatePicker fx:id="startDate" GridPane.halignment="LEFT">
+                           <GridPane.margin>
+                              <Insets left="95.0" />
+                           </GridPane.margin>
+                        </DatePicker>
+                        <Label text="End date:" GridPane.halignment="RIGHT">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="200.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <DatePicker fx:id="endDate" GridPane.halignment="RIGHT">
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </DatePicker>
+                     </children>
+                  </GridPane>
+                    </children>
+                    <GridPane.margin>
+                        <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+                    </GridPane.margin>
+                </HBox>
+            <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: black;" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5">
+               <children>
+                  <GridPane prefHeight="13.0" prefWidth="669.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="Number of teams:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <ChoiceBox fx:id="numberTeamsChoiceBox" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" GridPane.halignment="CENTER">
+                           <GridPane.margin>
+                              <Insets right="240.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                     </children>
+                  </GridPane>
+               </children>
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="30.0" right="30.0" top="15.0" />
+               </GridPane.margin>
+            </HBox>
+            <HBox fx:id="singleBracket" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: rgba(255,255,255,0.3);" GridPane.columnSpan="4" GridPane.rowIndex="6" GridPane.rowSpan="11">
+               <children>
+                  <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="600.0" prefWidth="1200.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                     <children>
+                        <VBox fx:id="singleBracketFinal" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.rowSpan="2">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketFinalTeam1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketFinalTeam1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketFinalTeam2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketFinalTeam2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="singleBracketSemiFinal1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketSemiFinal1Team1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketSemiFinal1Team1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketSemiFinal1Team2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketSemiFinal1Team2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="singleBracketSemiFinal2" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketSemiFinal2Team1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketSemiFinal2Team1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketSemiFinal2Team2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketSemiFinal2Team2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="singleBracketquarterFinal1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowSpan="2">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketQuarterFinal1Team1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketQuarterFinal1Team1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketQuarterFinal1Team2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketQuarterFinal1Team2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="singleBracketquarterFinal2" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.rowSpan="2">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketQuarterFinal2Team1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketQuarterFinal2Team1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketQuarterFinal2Team2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketQuarterFinal2Team2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="singleBracketquarterFinal3" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.rowSpan="2">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketQuarterFinal3Team1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketQuarterFinal3Team1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketQuarterFinal3Team2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketQuarterFinal3Team2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="singleBracketquarterFinal4" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.rowSpan="2">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketQuarterFinal4Team1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketQuarterFinal4Team1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketQuarterFinal4Team2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketQuarterFinal4Team2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="singleBracketRound2" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound2Team1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound2Team1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound2Team2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound2Team2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="40.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox fx:id="singleBracketRound1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <ChoiceBox fx:id="singleBracketRound1Team1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </ChoiceBox>
+                                          <TextArea fx:id="singleBracketRound1Team1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                             <GridPane.margin>
+                                                <Insets right="5.0" />
+                                             </GridPane.margin>
+                                          </TextArea>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound1Team2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound1Team2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="40.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox fx:id="singleBracketRound3" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound3Team1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound3Team1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound3Team2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound3Team2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="40.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox fx:id="singleBracketRound4" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound4Team1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound4Team1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound4Team2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound4Team2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="40.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox fx:id="singleBracketRound5" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound5Team1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound5Team1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound5Team2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound5Team2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="40.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox fx:id="singleBracketRound6" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound6Team1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound6Team1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound6Team2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound6Team2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="40.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox fx:id="singleBracketRound7" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound7Team1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound7Team1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound7Team2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound7Team2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="40.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <VBox fx:id="singleBracketRound8" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: white;" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                           <children>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound8Team1" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound8Team1Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                              <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" style="-fx-border-color: black;">
+                                 <children>
+                                    <GridPane prefHeight="30.0" prefWidth="223.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <GridPane prefHeight="30.0" prefWidth="223.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <ChoiceBox fx:id="singleBracketRound8Team2" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="110.0">
+                                                   <GridPane.margin>
+                                                      <Insets left="5.0" />
+                                                   </GridPane.margin>
+                                                </ChoiceBox>
+                                                <TextArea fx:id="singleBracketRound8Team2Score" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="30.0" GridPane.halignment="RIGHT">
+                                                   <GridPane.margin>
+                                                      <Insets right="5.0" />
+                                                   </GridPane.margin>
+                                                </TextArea>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </GridPane>
+                                 </children></HBox>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="40.0" />
+                           </GridPane.margin>
+                        </VBox>
+                        <Line fx:id="singleBracketRound1line1" endX="350.0" startX="200.0" strokeWidth="2.0" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets left="100.0" />
+                           </GridPane.margin>
+                        </Line>
+                        <Line fx:id="singleBracketRound2line1" endX="350.0" startX="200.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="100.0" />
+                           </GridPane.margin>
+                        </Line>
+                        <Line fx:id="singleBracketRound3line1" endX="350.0" startX="200.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="100.0" />
+                           </GridPane.margin>
+                        </Line>
+                         <Line fx:id="singleBracketRound4line1" endX="350.0" startX="200.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                             <GridPane.margin>
+                                 <Insets left="100.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound5line1" endX="350.0" startX="200.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                             <GridPane.margin>
+                                 <Insets left="100.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound6line1" endX="350.0" startX="200.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                             <GridPane.margin>
+                                 <Insets left="100.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound7line1" endX="350.0" startX="200.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                             <GridPane.margin>
+                                 <Insets left="100.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound8line1" endX="350.0" startX="200.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                             <GridPane.margin>
+                                 <Insets left="100.0" />
+                             </GridPane.margin>
+                         </Line>
+                        <Line fx:id="singleBracketQuarterFinal1line1" endX="300.0" startX="200.0" strokeWidth="2.0" GridPane.columnIndex="3" GridPane.rowSpan="2">
+                           <GridPane.margin>
+                              <Insets left="80.0" />
+                           </GridPane.margin>
+                        </Line>
+                         <Line fx:id="singleBracketQuarterFinal2line1" endX="300.0" startX="200.0" strokeWidth="2.0" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.rowSpan="2">
+                             <GridPane.margin>
+                                 <Insets left="80.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketQuarterFinal3line1" endX="300.0" startX="200.0" strokeWidth="2.0" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.rowSpan="4">
+                             <GridPane.margin>
+                                 <Insets left="80.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketQuarterFinal4line1" endX="300.0" startX="200.0" strokeWidth="2.0" GridPane.columnIndex="3" GridPane.rowIndex="6" GridPane.rowSpan="4">
+                             <GridPane.margin>
+                                 <Insets left="80.0" />
+                             </GridPane.margin>
+                         </Line>
+                        <Line fx:id="singleBracketFinalLine1" endX="25.0" strokeWidth="2.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets right="25.0" />
+                           </GridPane.margin>
+                        </Line>
+                         <Line fx:id="singleBracketFinalLine6" endX="25.0" strokeWidth="2.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                             <GridPane.margin>
+                                 <Insets right="25.0" />
+                             </GridPane.margin>
+                         </Line>
+                        <Line fx:id="singleBracketRound1line2" startY="20.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="102.0" top="20.0" />
+                           </GridPane.margin>
+                        </Line>
+                        <Line fx:id="singleBracketRound1line3" endX="130.0" startX="199.0" strokeWidth="2.0" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets left="50.0" top="45.0" />
+                           </GridPane.margin>
+                        </Line>
+                        <Line fx:id="singleBracketRound2line3" endX="130.0" startX="199.0" strokeWidth="2.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets bottom="45.0" left="50.0" />
+                           </GridPane.margin>
+                        </Line>
+                        <Line fx:id="singleBracketRound2line2" startY="21.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="20.0" left="102.0" />
+                           </GridPane.margin>
+                        </Line>
+                         <Line fx:id="singleBracketRound3line2" startY="20.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                             <GridPane.margin>
+                                 <Insets left="102.0" top="20.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound3line3" endX="130.0" startX="199.0" strokeWidth="2.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                             <GridPane.margin>
+                                 <Insets left="50.0" top="45.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound4line3" endX="130.0" startX="199.0" strokeWidth="2.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                             <GridPane.margin>
+                                 <Insets bottom="45.0" left="50.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound4line2" startY="21.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                             <GridPane.margin>
+                                 <Insets bottom="20.0" left="102.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound5line2" startY="20.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                             <GridPane.margin>
+                                 <Insets left="102.0" top="20.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound5line3" endX="130.0" startX="199.0" strokeWidth="2.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                             <GridPane.margin>
+                                 <Insets left="50.0" top="45.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound6line2" endX="130.0" startX="199.0" strokeWidth="2.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                             <GridPane.margin>
+                                 <Insets bottom="45.0" left="50.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound6line3" startY="21.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                             <GridPane.margin>
+                                 <Insets bottom="20.0" left="102.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound7line2" startY="20.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                             <GridPane.margin>
+                                 <Insets left="102.0" top="20.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound7line3" endX="130.0" startX="199.0" strokeWidth="2.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                             <GridPane.margin>
+                                 <Insets left="50.0" top="45.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound8line2" endX="130.0" startX="199.0" strokeWidth="2.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                             <GridPane.margin>
+                                 <Insets bottom="45.0" left="50.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketRound8line3" startY="21.0" strokeWidth="2.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                             <GridPane.margin>
+                                 <Insets bottom="20.0" left="102.0" />
+                             </GridPane.margin>
+                         </Line>
+                        <Line fx:id="singleBracketQuarterFinal1line2" startY="96.0" strokeWidth="2.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowSpan="3" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets right="38.0" top="25.0" />
+                           </GridPane.margin>
+                        </Line>
+                        <Line fx:id="singleBracketQuarterFinal1line3" endX="230.0" startX="191.0" strokeWidth="2.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets bottom="30.0" />
+                           </GridPane.margin>
+                        </Line>
+                         <Line fx:id="singleBracketQuarterFinal2line2" startY="20.0" strokeWidth="2.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="3" GridPane.valignment="CENTER">
+                             <GridPane.margin>
+                                 <Insets right="38.0" top="50.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketQuarterFinal2line3" endX="230.0" startX="191.0" strokeWidth="2.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                             <GridPane.margin>
+                                 <Insets bottom="25.0" top="55.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketQuarterFinal4line2" startY="95.0" strokeWidth="2.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.rowSpan="3" GridPane.valignment="CENTER">
+                             <GridPane.margin>
+                                 <Insets bottom="25.0" right="38.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketQuarterFinal4line3" endX="230.0" startX="191.0" strokeWidth="2.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                             <GridPane.margin>
+                                 <Insets top="30.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketQuarterFinal3Line2" startY="22.0" strokeWidth="2.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.rowSpan="3" GridPane.valignment="CENTER">
+                             <GridPane.margin>
+                                 <Insets bottom="50.0" right="38.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketQuarterFinal3line3" endX="230.0" startX="191.0" strokeWidth="2.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                             <GridPane.margin>
+                                 <Insets bottom="25.0" />
+                             </GridPane.margin>
+                         </Line>
+                        <Line fx:id="singleBracketFinalLine2" startY="96.0" strokeWidth="2.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.rowSpan="2" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets top="25.0" />
+                           </GridPane.margin>
+                        </Line>
+                        <Line fx:id="singleBracketFinalLine3" endX="18.0" strokeWidth="2.0" GridPane.columnIndex="5" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets bottom="13.0" />
+                           </GridPane.margin>
+                        </Line>
+                         <Line fx:id="singleBracketFinalLine5" startY="98.0" strokeWidth="2.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.rowSpan="2" GridPane.valignment="CENTER">
+                             <GridPane.margin>
+                                 <Insets bottom="25.0" />
+                             </GridPane.margin>
+                         </Line>
+                         <Line fx:id="singleBracketFinalLine4" endX="18.0" strokeWidth="2.0" GridPane.columnIndex="5" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                             <GridPane.margin>
+                                 <Insets top="13.0" />
+                             </GridPane.margin>
+                         </Line>
+                     </children>
+                  </GridPane>
+               </children>
+               <GridPane.margin>
+                  <Insets bottom="10.0" top="20.0" />
+               </GridPane.margin>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#onNewClick" text="New tournament" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="16" GridPane.valignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#onEditClick" text="Edit tournament" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="16" GridPane.valignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#onDeleteClick" text="Delete tournament" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="16" GridPane.valignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#onClearSelectionClick" text="Clear selection" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="55.0" />
+               </GridPane.margin>
+            </Button>
+            </children>
+        </GridPane>
+    </children>
+</VBox>
